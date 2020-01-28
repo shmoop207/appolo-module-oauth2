@@ -1,0 +1,35 @@
+{
+  "name": "@appolo/oauth2",
+  "version": "0.0.12",
+  "description": "",
+  "keywords": [],
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@appolo/logger": "^1.0.5",
+    "appolo": "^6.0.88",
+    "appolo-oauth2": "github:shmoop207/appolo-oauth2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.7",
+    "@types/chai-http": "^4.2.0",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^13.5.0",
+    "@types/supertest": "^2.0.8",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^7.0.1",
+    "supertest": "^4.0.2",
+    "typescript": "^3.7.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shmoop207/appolo-module-typeorm"
+  },
+  "author": {
+    "name": "roman svichar"
+  },
+  "license": "MIT"
+}
