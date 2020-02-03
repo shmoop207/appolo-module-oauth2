@@ -18,7 +18,7 @@ export class AccountsController extends Controller {
                 clientId: name,
                 clientSecret: pass,
                 scope: req.query.scope
-            })
+            });
 
             return token;
 
