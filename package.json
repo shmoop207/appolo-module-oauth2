@@ -1,6 +1,6 @@
 {
   "name": "@appolo/oauth2",
-  "version": "0.0.14",
+  "version": "7.0.0",
   "description": "",
   "keywords": [],
   "main": "index.js",
@@ -8,21 +8,21 @@
     "access": "public"
   },
   "dependencies": {
-    "@appolo/logger": "^1.0.5",
-    "appolo": "^6.0.88",
-    "appolo-oauth2": "^0.0.3"
+    "@appolo/logger": "^7.0.1",
+    "appolo": "^7.0.5",
+    "appolo-oauth2": "^0.0.5"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.7",
+    "@types/chai": "^4.2.12",
     "@types/chai-http": "^4.2.0",
-    "@types/mocha": "^5.2.7",
-    "@types/node": "^13.5.0",
-    "@types/supertest": "^2.0.8",
+    "@types/mocha": "^8.0.2",
+    "@types/node": "^14.0.27",
+    "@types/supertest": "^2.0.10",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
-    "mocha": "^7.0.1",
+    "mocha": "^8.1.1",
     "supertest": "^4.0.2",
-    "typescript": "^3.7.5"
+    "typescript": "^3.9.7"
   },
   "repository": {
     "type": "git",
