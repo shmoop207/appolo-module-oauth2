@@ -1,6 +1,6 @@
 {
   "name": "@appolo/oauth2",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "",
   "keywords": [],
   "main": "index.js",
@@ -10,7 +10,7 @@
   "dependencies": {
     "@appolo/logger": "^7.0.1",
     "appolo": "^7.0.5",
-    "appolo-oauth2": "^0.0.5"
+    "appolo-oauth2": "^0.0.6"
   },
   "devDependencies": {
     "@types/chai": "^4.2.12",
