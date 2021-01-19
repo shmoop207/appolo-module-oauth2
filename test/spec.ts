@@ -1,7 +1,8 @@
-import {App, createApp} from 'appolo'
+import {App, createApp} from '@appolo/core'
 import chai = require('chai');
 import chaiHttp = require('chai-http');
 import {OAuth2Module} from "../index";
+import  qs = require( "qs");
 import {TestModel} from "./mock/src/testModel";
 
 chai.use(chaiHttp);
@@ -16,8 +17,8 @@ describe("auth module Spec", function () {
     beforeEach(async () => {
         app = createApp({root: __dirname + "/mock", environment: "production", port: 8182});
 
-
-        await app.module(new OAuth2Module({model: TestModel}));
+        app.set("qsParser",qs.parse)
+        app.module.use(OAuth2Module.for({model: TestModel}));
 
 
         await app.launch();
@@ -30,14 +31,14 @@ describe("auth module Spec", function () {
     it("should load auth", async () => {
 
 
-        let reqLogin = await chai.request(app.handle)
-            .get('/login').auth("aa","bb").query({username:"ccc", password:"ddd","scope[]":["scopeTest"]});
+        let reqLogin = await chai.request(app.route.handle)
+            .get('/login').auth("aa", "bb").query({username: "ccc", password: "ddd", "scope[]": ["scopeTest"]});
 
         let token = reqLogin.body.accessToken;
 
         token.should.be.ok;
 
-        let reqToken = await chai.request(app.handle)
+        let reqToken = await chai.request(app.route.handle)
             .get('/token')
             .set("Authorization", "Bearer " + token);
 
@@ -48,8 +49,8 @@ describe("auth module Spec", function () {
     it("should load auth with error", async () => {
 
 
-        let reqLogin = await chai.request(app.handle)
-            .get('/login').auth("aa2","bb").query({username:"ccc", password:"ddd","scope[]":["scopeTest"]});
+        let reqLogin = await chai.request(app.route.handle)
+            .get('/login').auth("aa2", "bb").query({username: "ccc", password: "ddd", "scope[]": ["scopeTest"]});
 
         reqLogin.body.statusCode.should.be.eq(400);
         reqLogin.body.message.should.be.eq("Invalid client: client is invalid");

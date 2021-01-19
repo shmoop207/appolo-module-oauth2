@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.TestModel = void 0;
 const tslib_1 = require("tslib");
-const appolo_1 = require("appolo");
-const appolo_utils_1 = require("appolo-utils");
+const inject_1 = require("@appolo/inject");
+const utils_1 = require("@appolo/utils");
 let TestModel = class TestModel {
     constructor() {
         this._tokens = {};
@@ -32,10 +33,10 @@ let TestModel = class TestModel {
         return token;
     }
     async generateAccessToken(client, user, scope) {
-        return appolo_utils_1.Guid.guid();
+        return utils_1.Guid.guid();
     }
     async generateRefreshToken(client, user, scope) {
-        return appolo_utils_1.Guid.guid();
+        return utils_1.Guid.guid();
     }
     async getAccessToken(accessToken) {
         return this._tokens[accessToken];
@@ -56,8 +57,8 @@ let TestModel = class TestModel {
     }
 };
 TestModel = tslib_1.__decorate([
-    appolo_1.define(),
-    appolo_1.singleton()
+    inject_1.define(),
+    inject_1.singleton()
 ], TestModel);
 exports.TestModel = TestModel;
 //# sourceMappingURL=testModel.js.map

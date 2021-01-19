@@ -1,5 +1,6 @@
 "use strict";
-import {define, factory, IFactory, inject, singleton, Injector, IApp} from 'appolo';
+import {define, factory, IFactory, inject, singleton, Injector} from '@appolo/inject';
+import {IApp} from '@appolo/core';
 import {IOptions} from "./interfaces";
 import {createOAuth2Server, OAuth2Server,IPasswordModel} from "appolo-oauth2";
 
@@ -21,6 +22,7 @@ export class Client implements IFactory<OAuth2Server> {
             let model = this.injector.get<IPasswordModel>(this.moduleOptions.model);
 
             let client = await createOAuth2Server({...this.moduleOptions.config, model});
+
 
             return client;
 

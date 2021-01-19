@@ -1,8 +1,18 @@
-import {IPasswordModel, IAuthenticationModel, IRefreshTokenModel,IClient,Falsey,IUser,IToken,IRefreshToken} from "../../../index";
-import {define, singleton, middleware,get} from 'appolo'
+import {
+    IPasswordModel,
+    IAuthenticationModel,
+    IRefreshTokenModel,
+    IClient,
+    Falsey,
+    IUser,
+    IToken,
+    IRefreshToken
+} from "../../../index";
+import {middleware, get} from '@appolo/route'
+import {define, singleton} from '@appolo/inject'
 
 
-import {Guid} from "appolo-utils";
+import {Guid} from "@appolo/utils";
 
 @define()
 @singleton()
@@ -13,7 +23,7 @@ export class TestModel implements IPasswordModel, IAuthenticationModel, IRefresh
 
     async getClient(clientId: string, clientSecret: string): Promise<IClient | Falsey> {
         if (clientId == "aa" && clientSecret == "bb") {
-            return {grants: ["password","refreshToken"], id: "111"}
+            return {grants: ["password", "refreshToken"], id: "111"}
         }
     }
 
@@ -66,9 +76,9 @@ export class TestModel implements IPasswordModel, IAuthenticationModel, IRefresh
     }
 
     async saveRefreshToken(token: IRefreshToken, client: IClient, user: IUser): Promise<IRefreshToken | Falsey> {
-         this._refreshTokens[token.refreshToken] = token;
+        this._refreshTokens[token.refreshToken] = token;
 
-         return  token;
+        return token;
     }
 
     async verifyScope(token: IToken, scope: string[]): Promise<boolean> {

@@ -1,4 +1,5 @@
-import {controller, Controller, get, inject, middleware, IRequest,HttpError} from 'appolo'
+import {controller, Controller, get, middleware, IRequest,HttpError} from '@appolo/route'
+import { inject, } from '@appolo/inject'
 import {OAuth2Server, Utils} from "../../../index";
 
 @controller()

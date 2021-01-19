@@ -1,9 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.AccountsController = void 0;
 const tslib_1 = require("tslib");
-const appolo_1 = require("appolo");
+const route_1 = require("@appolo/route");
+const inject_1 = require("@appolo/inject");
 const index_1 = require("../../../index");
-let AccountsController = class AccountsController extends appolo_1.Controller {
+let AccountsController = class AccountsController extends route_1.Controller {
     async login(req, res) {
         try {
             let { pass, name } = index_1.Utils.parseAuthorization(req.headers["authorization"]);
@@ -17,7 +19,7 @@ let AccountsController = class AccountsController extends appolo_1.Controller {
             return token;
         }
         catch (e) {
-            throw new appolo_1.HttpError(e.code, e.message);
+            throw new route_1.HttpError(e.code, e.message);
         }
     }
     async token(req) {
@@ -27,16 +29,16 @@ let AccountsController = class AccountsController extends appolo_1.Controller {
     }
 };
 tslib_1.__decorate([
-    appolo_1.inject()
+    inject_1.inject()
 ], AccountsController.prototype, "oAuth2Server", void 0);
 tslib_1.__decorate([
-    appolo_1.get("/login")
+    route_1.get("/login")
 ], AccountsController.prototype, "login", null);
 tslib_1.__decorate([
-    appolo_1.get("/token")
+    route_1.get("/token")
 ], AccountsController.prototype, "token", null);
 AccountsController = tslib_1.__decorate([
-    appolo_1.controller()
+    route_1.controller()
 ], AccountsController);
 exports.AccountsController = AccountsController;
 //# sourceMappingURL=accountsController.js.map

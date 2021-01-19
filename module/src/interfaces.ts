@@ -1,4 +1,3 @@
-import {IModuleOptions} from "appolo";
 import {
     createOAuth2Server,
     OAuth2Server,
@@ -9,7 +8,7 @@ import {
 } from "appolo-oauth2";
 
 
-export interface IOptions extends IModuleOptions {
+export interface IOptions  {
     id?: string,
     model: IModelClass
     config?: Omit<OAuth2Options, "model">
