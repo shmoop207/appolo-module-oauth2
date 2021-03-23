@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@appolo/logger": "^8.0.5",
-    "@appolo/core": "^8.0.8",
+    "@appolo/core": "^8.0.9",
     "appolo-oauth2": "^8.0.0"
   },
   "devDependencies": {
