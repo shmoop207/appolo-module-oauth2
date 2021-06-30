@@ -8,7 +8,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@appolo/logger": "^8.0.5",
+    "@appolo/logger": "^8.0.6",
     "@appolo/core": "^8.0.8",
     "appolo-oauth2": "^8.0.0"
   },
